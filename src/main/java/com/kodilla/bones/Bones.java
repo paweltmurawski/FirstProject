@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -22,7 +23,7 @@ import javax.swing.*;
 
 public class Bones extends Application {
 
-    private Image background = new Image("file:resources/lake-2063957_340.png");
+    private Image background = new Image("file:resources/file/tlo.png");
     private Image one = new Image("file:resources/1.png");
     private Image two = new Image("file:resources/2.png");
     private Image three = new Image("file:resources/3.png");
@@ -36,37 +37,37 @@ public class Bones extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        BackgroundSize backgroundSize = new BackgroundSize(150, 150, false, false, true, false);
-        BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
-        Background background = new Background(backgroundImage);
 
         Group root = new Group();
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.CENTER_RIGHT);
+        gridPane.setPadding(new Insets(6, 15.5, 16.5, 12.5));
+        gridPane.setHgap(8.5);
 
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
-        grid.setPadding(new Insets(6, 15.5, 16.5, 12.5));
-        grid.setHgap(8.5);
-        grid.setVgap(8.5);
-        grid.setBackground(background);
-
-        ImageView image = new ImageView();
-        image.getImage();
-
-        grid.add(grid, 0, 0, 3, 1);
-
-        Scene scene = new Scene(root, 1300, 700, Color.WHITE);
+        Image setBackground = new Image("file:resources/file/tlo.png");
+        BackgroundSize backgroundSize = new BackgroundSize(150, 150, false, false, true, true);
+        BackgroundImage backgroundImage = new BackgroundImage(setBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, backgroundSize);
+        Background background = new Background(backgroundImage);
+        gridPane.setBackground(background);
 
 
+       // root.getChildren().add(gridPane);
+
+
+        ImageView myBackgroundImage = new ImageView(setBackground);
+        root.getChildren().addAll(myBackgroundImage);
+
+
+        Scene scene = new Scene(gridPane, 1300, 700);
         primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.setResizable(false);
-        primaryStage.setFullScreen(true);
+        primaryStage.setFullScreen(false);
         primaryStage.setTitle("Bones");
         primaryStage.setScene(scene);
         primaryStage.show();
 
-
-        Label label = new Label("Result table");
-        label.setFont(new Font("Times New Roman" , 20));
+//        Label label = new Label("Result table");
+        //      label.setFont(new Font("Times New Roman" , 20));
 
         TableView resultsTable = new TableView();
         resultsTable.setEditable(true);
@@ -81,9 +82,93 @@ public class Bones extends Application {
         playerTwoColumn.setMaxWidth(150);
         resultsTable.getColumns().addAll(categoriesColumn, playerOneColumn, playerTwoColumn);
 
+        Button click = new Button("click");
+        click.setText("Start");
+
+        gridPane.getChildren().add(resultsTable);
+
+        // example from documentation Pane class
+
+        Pane canvas = new Pane();
+        canvas.setStyle("-fx-background-color: black;");
+        canvas.setPrefSize(200,200);
+        Circle circle = new Circle(50,Color.BLUE);
+        circle.relocate(20, 20);
+        Rectangle rectangle = new Rectangle(100,100,Color.RED);
+        rectangle.relocate(70,70);
+        canvas.getChildren().addAll(circle,rectangle);
+        gridPane.getChildren().addAll(canvas);
 
 
-        root.getChildren().add(resultsTable);
+        Button newbtn = new Button();
+        newbtn.setText("Start");
+        gridPane.getChildren().addAll(newbtn);
 
     }
 }
+
+
+
+
+
+
+/*
+        Button drawbtn = new Button();
+        drawbtn.setText("Start");
+        drawbtn.setOnAction((e) -> {
+
+        }
+
+         Button drawbtn = new Button();
+        drawbtn.setText("Next move");
+        drawbtn.setOnAction((e) -> {
+            if (playerMove) {
+                drawBones(//elements);
+
+                if (numberOfMoves.movesQuantity > 13) {
+                    System.out.println("End of game");
+                }
+            }
+        });
+
+
+        int playerScore = player.scoreTotal();
+        int computerScore = computer.scoreTotal();
+
+        System.out.println("Player score: " + playerScore);
+        System.out.println("Computer score: " + computerScore);
+
+        if (playerScore > computerScore) {
+            System.out.println("Player wins");
+            status.setText("You won");
+        } else if (playerScore < computerScore) {
+            System.out.println("Computer wins");
+            status.setText("You lose");
+        } else (playerScore == computerScore) {
+            System.out.println("Draw");
+            status.setText("Draw");
+        });
+
+
+        Button newbtn = new Button();
+        newbtn.setText("New game");
+        newbtn.setOnAction((e) -> {
+            newGame();
+        });
+
+        Button newbtn = new Button();
+        newbtn.setText("New game");
+        newbtn.setOnAction((e) -> {
+            newGame();
+        });
+
+
+        public void counting( int countPoints){
+
+    }
+
+        public void () {
+        }
+*/
+
+
