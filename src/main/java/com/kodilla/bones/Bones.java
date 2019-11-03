@@ -1,30 +1,28 @@
 package com.kodilla.bones;
 
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
+import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
-import javax.swing.*;
-
+import java.util.Random;
 
 public class Bones extends Application {
 
-    private Image background = new Image("file:resources/file/tlo.png");
-    private Image one = new Image("file:resources/1.png");
+    //private Image background = new Image("file:resources/file/tlo.png");
+    private Image one = new Image("/file/1.png");
+
     private Image two = new Image("file:resources/2.png");
     private Image three = new Image("file:resources/3.png");
     private Image four = new Image("file:resources/4.png");
@@ -38,37 +36,196 @@ public class Bones extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Group root = new Group();
         GridPane gridPane = new GridPane();
-        gridPane.setAlignment(Pos.CENTER_RIGHT);
-        gridPane.setPadding(new Insets(6, 15.5, 16.5, 12.5));
-        gridPane.setHgap(8.5);
+        gridPane.setPadding(new Insets(30));
+        gridPane.setHgap(20);
+        gridPane.setVgap(20);
+        gridPane.setAlignment(Pos.TOP_CENTER);
 
-        Image setBackground = new Image("file:resources/file/tlo.png");
+        try {
+            Scene scene = new Scene(gridPane, 1300, 700);
+            primaryStage.initStyle(StageStyle.DECORATED);
+            primaryStage.setResizable(false);
+            primaryStage.setFullScreen(false);
+            primaryStage.setTitle("Bones");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }  catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        Image setBackground = new Image("/file/tlo.png");
         BackgroundSize backgroundSize = new BackgroundSize(150, 150, false, false, true, true);
         BackgroundImage backgroundImage = new BackgroundImage(setBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, backgroundSize);
         Background background = new Background(backgroundImage);
         gridPane.setBackground(background);
 
+        ImageView numberOneBoneView = new ImageView();
+        Image numberOneBone = new Image("/file/1.png");
+        numberOneBoneView.setImage(numberOneBone);
+        numberOneBoneView.setFitHeight(50);
+        numberOneBoneView.setFitWidth(50);
 
-       // root.getChildren().add(gridPane);
+        gridPane.add(numberOneBoneView, 3, 3, 1, 1);
+
+/*
+        ImageView numberTwoBoneView = new ImageView();
+        Image numberTwoBone = new Image("/file/2.png");
+        numberTwoBoneView.setImage(numberTwoBone);
+        numberTwoBoneView.setFitHeight(50);
+        numberTwoBoneView.setFitWidth(50);
+        gridPane.getChildren().add(numberTwoBoneView);
+
+        ImageView numberThreeBoneView = new ImageView();
+        Image numberThreeBone = new Image("/file/3.png");
+        numberThreeBoneView.setImage(numberThreeBone);
+        numberThreeBoneView.setFitHeight(50);
+        numberThreeBoneView.setFitWidth(50);
+        gridPane.getChildren().add(numberThreeBoneView);
+
+        ImageView numberFourBoneView = new ImageView();
+        Image numberFourBone = new Image("/file/4.png");
+        numberFourBoneView.setImage(numberFourBone);
+        numberFourBoneView.setFitHeight(50);
+        numberFourBoneView.setFitWidth(50);
+        gridPane.getChildren().add(numberFourBoneView);
+
+        ImageView numberFiveBoneView = new ImageView();
+        Image numberFiveBone = new Image("/file/5.png");
+        numberFiveBoneView.setImage(numberFiveBone);
+        numberFiveBoneView.setFitHeight(50);
+        numberFiveBoneView.setFitWidth(50);
+        gridPane.getChildren().add(numberFiveBoneView);
+
+        ImageView numberSixBoneView = new ImageView();
+        Image numberSixBone = new Image("/file/6.png");
+        numberSixBoneView.setImage(numberSixBone);
+        numberSixBoneView.setFitHeight(50);
+        numberSixBoneView.setFitWidth(50);
+        gridPane.getChildren().add(numberSixBoneView);
+*/
+        // button's in game
+
+        Button startGame = new Button();
+        startGame.setText("Start Game");
+        startGame.setTextFill(Color.BLUE);
+        startGame.setFont(new Font("Verdana", 25));
+        startGame.setOnAction(event -> System.out.println("I clicked start button"));
+        gridPane.add(startGame, 1, 0, 1, 1);
+
+        Button quitButton = new Button();
+        quitButton.setText("Quit");
+        quitButton.setTextFill(Color.RED);
+        quitButton.setFont(new Font("Verdana", 25));
+        quitButton.setOnAction(e -> {
+            System.out.println("Exit");
+            Platform.exit();
+        });
+        gridPane.add(quitButton, 2, 0, 1, 1);
+
+        Label nameLabel = new Label("Player name:");
+        nameLabel.setFont(new Font("Verdana", 25));
+        nameLabel.setTextFill(Color.BLACK);
+        gridPane.add(nameLabel, 1, 1, 1, 1);
+
+        Label playerScoreLabel = new Label("Player score:");
+        nameLabel.setFont(new Font("Verdana", 25));
+        nameLabel.setTextFill(Color.BLACK);
+        gridPane.add(playerScoreLabel, 1, 2, 1, 1);
+
+        Label computerScoreLabel = new Label("Computer score:");
+        nameLabel.setFont(new Font("Verdana", 25));
+        nameLabel.setTextFill(Color.BLACK);
+        gridPane.add(computerScoreLabel, 1, 3, 1, 1);
+
+        TextField playerNameField = new TextField();
+        playerNameField.setPromptText("player name");
+        gridPane.add(playerNameField, 2, 1, 1, 1);
+
+        ColumnConstraints column1 = new ColumnConstraints(200);
+        gridPane.getColumnConstraints().add(column1);
+
+        ColumnConstraints column2 = new ColumnConstraints(200);
+        gridPane.getColumnConstraints().add(column2);
+
+        ColumnConstraints column3 = new ColumnConstraints(200);
+        gridPane.getColumnConstraints().add(column3);
+
+        RowConstraints row1 = new RowConstraints(80);
+        row1.setValignment(VPos.CENTER);
+        gridPane.getRowConstraints().add(row1);
+
+        RowConstraints row2 = new RowConstraints(80);
+        row2.setValignment(VPos.CENTER);
+        gridPane.getRowConstraints().add(row2);
+
+        RowConstraints row3 = new RowConstraints(170);
+        row3.setValignment(VPos.CENTER);
+        gridPane.getRowConstraints().add(row3);
+    }
+
+    public void generateRandomNumber(ActionEvent event) {
+        Random randomNumber = new Random();
+        int rolledNumber = randomNumber.nextInt(6) + 1;
+        playerScoreLabel.setText(Integer.toString(rolledNumber));
+        //System.out.println(Integer.toString(rolledNumber));
+    }
+/*
+    public int countingNumberOfMoves() {
+        int numberOfMoves;
+        int sum = 0;
+        int one = 1;
+        int two = 2;
+        int three = 3;
+        int four = 4;
+        int five = 5;
+        int six = 6;
+        if (numberOfMoves < 10) {
+            sum += sum;
+       else{
+
+            }
+        }
+    }
+
+    public void scoreTotal(int drawnNumber) {
+        if (!drawnNumber = 1) {
+            pointsSum += pointsSum;
+        }
+    }
+
+    int playerScore = player.scoreTotal();
+    int computerScore = computer.scoreTotal();
+
+    public void results() {
+        System.out.println("Player score: " + playerScore);
+        System.out.println("Computer score: " + computerScore);
+
+        if (playerScore > computerScore) {
+            System.out.println("Player wins");
+            status.setText("You won");
+        } else if (playerScore < computerScore) {
+            System.out.println("Computer wins");
+            status.setText("You lose");
+        } else (playerScore == computerScore) {
+            System.out.println("Draw");
+            status.setText("Draw");
+        }
+
+    }
 
 
-        ImageView myBackgroundImage = new ImageView(setBackground);
-        root.getChildren().addAll(myBackgroundImage);
+        public void counting( int countPoints){
 
+    }
 
-        Scene scene = new Scene(gridPane, 1300, 700);
-        primaryStage.initStyle(StageStyle.DECORATED);
-        primaryStage.setResizable(false);
-        primaryStage.setFullScreen(false);
-        primaryStage.setTitle("Bones");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        public void () {
+        }
+*/
 
 //        Label label = new Label("Result table");
-        //      label.setFont(new Font("Times New Roman" , 20));
-
+//      label.setFont(new Font("Times New Roman" , 20));
+/*
         TableView resultsTable = new TableView();
         resultsTable.setEditable(true);
         TableColumn categoriesColumn = new TableColumn("");
@@ -82,93 +239,27 @@ public class Bones extends Application {
         playerTwoColumn.setMaxWidth(150);
         resultsTable.getColumns().addAll(categoriesColumn, playerOneColumn, playerTwoColumn);
 
-        Button click = new Button("click");
-        click.setText("Start");
-
         gridPane.getChildren().add(resultsTable);
-
-        // example from documentation Pane class
-
-        Pane canvas = new Pane();
-        canvas.setStyle("-fx-background-color: black;");
-        canvas.setPrefSize(200,200);
-        Circle circle = new Circle(50,Color.BLUE);
-        circle.relocate(20, 20);
-        Rectangle rectangle = new Rectangle(100,100,Color.RED);
-        rectangle.relocate(70,70);
-        canvas.getChildren().addAll(circle,rectangle);
-        gridPane.getChildren().addAll(canvas);
-
-
-        Button newbtn = new Button();
-        newbtn.setText("Start");
-        gridPane.getChildren().addAll(newbtn);
-
-    }
-}
-
-
-
-
-
+        */
 
 /*
-        Button drawbtn = new Button();
-        drawbtn.setText("Start");
-        drawbtn.setOnAction((e) -> {
+        //example of File Input Stream from internet
+        //Creating an image
+        Image one = new Image(new FileInputStream("/file/1.png"));
 
-        }
+        //Setting the image view
+        ImageView imageView = new ImageView(one);
 
-         Button drawbtn = new Button();
-        drawbtn.setText("Next move");
-        drawbtn.setOnAction((e) -> {
-            if (playerMove) {
-                drawBones(//elements);
+        //Setting the position of the image
+        imageView.setX(50);
+        imageView.setY(25);
 
-                if (numberOfMoves.movesQuantity > 13) {
-                    System.out.println("End of game");
-                }
-            }
-        });
+        //setting the fit height and width of the image view
+        imageView.setFitHeight(455);
+        imageView.setFitWidth(500);
 
-
-        int playerScore = player.scoreTotal();
-        int computerScore = computer.scoreTotal();
-
-        System.out.println("Player score: " + playerScore);
-        System.out.println("Computer score: " + computerScore);
-
-        if (playerScore > computerScore) {
-            System.out.println("Player wins");
-            status.setText("You won");
-        } else if (playerScore < computerScore) {
-            System.out.println("Computer wins");
-            status.setText("You lose");
-        } else (playerScore == computerScore) {
-            System.out.println("Draw");
-            status.setText("Draw");
-        });
-
-
-        Button newbtn = new Button();
-        newbtn.setText("New game");
-        newbtn.setOnAction((e) -> {
-            newGame();
-        });
-
-        Button newbtn = new Button();
-        newbtn.setText("New game");
-        newbtn.setOnAction((e) -> {
-            newGame();
-        });
-
-
-        public void counting( int countPoints){
-
-    }
-
-        public void () {
-        }
+        //Setting the preserve ratio of the image view
+        imageView.setPreserveRatio(true);
 */
 
-
+}
