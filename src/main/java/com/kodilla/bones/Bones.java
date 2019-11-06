@@ -2,7 +2,6 @@ package com.kodilla.bones;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
@@ -19,6 +18,10 @@ import javafx.stage.StageStyle;
 import java.util.Random;
 
 public class Bones extends Application {
+
+    private Computer computer;
+    private Player player;
+    private boolean playerTurn;
 
     //private Image background = new Image("file:resources/file/tlo.png");
     private Image one = new Image("/file/1.png");
@@ -66,7 +69,7 @@ public class Bones extends Application {
         numberOneBoneView.setFitHeight(50);
         numberOneBoneView.setFitWidth(50);
 
-        gridPane.add(numberOneBoneView, 3, 3, 1, 1);
+       // gridPane.add(numberOneBoneView, 4, 3, 1, 1);
 
 /*
         ImageView numberTwoBoneView = new ImageView();
@@ -107,7 +110,7 @@ public class Bones extends Application {
         // button's in game
 
         Button startGame = new Button();
-        startGame.setText("Start Game");
+        startGame.setText("Start");
         startGame.setTextFill(Color.BLUE);
         startGame.setFont(new Font("Verdana", 25));
         startGame.setOnAction(event -> System.out.println("I clicked start button"));
@@ -124,123 +127,76 @@ public class Bones extends Application {
         gridPane.add(quitButton, 2, 0, 1, 1);
 
         Label nameLabel = new Label("Player name:");
-        nameLabel.setFont(new Font("Verdana", 25));
+        nameLabel.setFont(new Font("Verdana", 15));
         nameLabel.setTextFill(Color.BLACK);
         gridPane.add(nameLabel, 1, 1, 1, 1);
-
-        Label playerScoreLabel = new Label("Player score:");
-        nameLabel.setFont(new Font("Verdana", 25));
-        nameLabel.setTextFill(Color.BLACK);
-        gridPane.add(playerScoreLabel, 1, 2, 1, 1);
-
-        Label computerScoreLabel = new Label("Computer score:");
-        nameLabel.setFont(new Font("Verdana", 25));
-        nameLabel.setTextFill(Color.BLACK);
-        gridPane.add(computerScoreLabel, 1, 3, 1, 1);
 
         TextField playerNameField = new TextField();
         playerNameField.setPromptText("player name");
         gridPane.add(playerNameField, 2, 1, 1, 1);
 
-        ColumnConstraints column1 = new ColumnConstraints(200);
-        gridPane.getColumnConstraints().add(column1);
+        Label playerScoreLabel = new Label("Player score:");
+        playerScoreLabel.setFont(new Font("Verdana", 15));
+        playerScoreLabel.setTextFill(Color.BLACK);
+        gridPane.add(playerScoreLabel, 1, 2, 1, 1);
 
-        ColumnConstraints column2 = new ColumnConstraints(200);
-        gridPane.getColumnConstraints().add(column2);
+        Label computerScoreLabel = new Label("Computer score:");
+        computerScoreLabel.setFont(new Font("Verdana", 15));
+        computerScoreLabel.setTextFill(Color.BLACK);
+        gridPane.add(computerScoreLabel, 1, 3, 1, 1);
 
-        ColumnConstraints column3 = new ColumnConstraints(200);
-        gridPane.getColumnConstraints().add(column3);
+        Button playerTurn = new Button();
+        playerTurn.setText("Player turn");
+        playerTurn.setTextFill(Color.BLUE);
+        playerTurn.setFont(new Font("Verdana", 15));
 
-        RowConstraints row1 = new RowConstraints(80);
-        row1.setValignment(VPos.CENTER);
-        gridPane.getRowConstraints().add(row1);
+        gridPane.add(playerTurn, 1, 4, 1, 1);
 
-        RowConstraints row2 = new RowConstraints(80);
-        row2.setValignment(VPos.CENTER);
-        gridPane.getRowConstraints().add(row2);
+        ColumnConstraints column1 = new ColumnConstraints(150);
+        ColumnConstraints column2 = new ColumnConstraints(150);
+        ColumnConstraints column3 = new ColumnConstraints(150);
+        ColumnConstraints column4 = new ColumnConstraints(150);
 
-        RowConstraints row3 = new RowConstraints(170);
-        row3.setValignment(VPos.CENTER);
-        gridPane.getRowConstraints().add(row3);
+        gridPane.getColumnConstraints().addAll(column1, column2, column3, column4);
+
+        RowConstraints row1 = new RowConstraints(100);
+        row1.setValignment(VPos.TOP);
+
+        RowConstraints row2 = new RowConstraints(50);
+        row2.setValignment(VPos.TOP);
+
+        RowConstraints row3 = new RowConstraints(50);
+        row3.setValignment(VPos.TOP);
+
+        RowConstraints row4 = new RowConstraints(100);
+        row4.setValignment(VPos.CENTER);
+
+        gridPane.getRowConstraints().addAll(row1, row2, row3, row4);
     }
 
-    public void generateRandomNumber(ActionEvent event) {
+    public void generateRandomNumber() {
         Random randomNumber = new Random();
         int rolledNumber = randomNumber.nextInt(6) + 1;
-        playerScoreLabel.setText(Integer.toString(rolledNumber));
-        //System.out.println(Integer.toString(rolledNumber));
     }
-/*
-    public int countingNumberOfMoves() {
-        int numberOfMoves;
-        int sum = 0;
-        int one = 1;
-        int two = 2;
-        int three = 3;
-        int four = 4;
-        int five = 5;
-        int six = 6;
-        if (numberOfMoves < 10) {
-            sum += sum;
-       else{
-
-            }
-        }
-    }
-
-    public void scoreTotal(int drawnNumber) {
-        if (!drawnNumber = 1) {
-            pointsSum += pointsSum;
-        }
-    }
-
-    int playerScore = player.scoreTotal();
-    int computerScore = computer.scoreTotal();
 
     public void results() {
+        int numberOfMoves = 0;
+        int playerScore = player.scorePoints();
+        int computerScore = computer.scorePoints();
         System.out.println("Player score: " + playerScore);
         System.out.println("Computer score: " + computerScore);
 
-        if (playerScore > computerScore) {
+        if (numberOfMoves == 10 && playerScore > computerScore) {
             System.out.println("Player wins");
-            status.setText("You won");
-        } else if (playerScore < computerScore) {
+           // status.setText("You won");
+        } else if (numberOfMoves == 10 && playerScore < computerScore) {
             System.out.println("Computer wins");
-            status.setText("You lose");
-        } else (playerScore == computerScore) {
+            //status.setText("You lose");
+        } else {
             System.out.println("Draw");
-            status.setText("Draw");
+        //    status.setText("Draw");
         }
-
     }
-
-
-        public void counting( int countPoints){
-
-    }
-
-        public void () {
-        }
-*/
-
-//        Label label = new Label("Result table");
-//      label.setFont(new Font("Times New Roman" , 20));
-/*
-        TableView resultsTable = new TableView();
-        resultsTable.setEditable(true);
-        TableColumn categoriesColumn = new TableColumn("");
-        categoriesColumn.setMinWidth(250);
-        categoriesColumn.setMaxWidth(250);
-        TableColumn playerOneColumn = new TableColumn("Player 1");
-        playerOneColumn.setMinWidth(150);
-        playerOneColumn.setMaxWidth(150);
-        TableColumn playerTwoColumn = new TableColumn("Player 2");
-        playerTwoColumn.setMinWidth(150);
-        playerTwoColumn.setMaxWidth(150);
-        resultsTable.getColumns().addAll(categoriesColumn, playerOneColumn, playerTwoColumn);
-
-        gridPane.getChildren().add(resultsTable);
-        */
 
 /*
         //example of File Input Stream from internet
