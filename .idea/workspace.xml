@@ -4,10 +4,10 @@
     <list default="true" id="5cb3deef-3ed5-4813-8631-b21ac2cb6bef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Bones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Bones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Computer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Computer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Computer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-728">
-              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="136">
+              <caret line="175" column="12" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,16 +42,11 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+              <folding>
+                <element signature="e#335#336#0" expanded="true" />
+                <element signature="e#358#359#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,8 +74,8 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/Bones.java" />
         <option value="$PROJECT_DIR$/src/main/java/Project/first/project/Bones.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" />
       </list>
     </option>
@@ -97,7 +92,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -142,7 +137,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,18 +243,19 @@
       <workItem from="1572311063630" duration="622000" />
       <workItem from="1572351813547" duration="2663000" />
       <workItem from="1572648306862" duration="7510000" />
-      <workItem from="1572772444893" duration="10764000" />
+      <workItem from="1572772444893" duration="16032000" />
+      <workItem from="1573526471002" duration="9725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144163000" />
+    <option name="totallyTimeSpent" value="159156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32753405" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33282906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -274,7 +270,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32872504" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32733223" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32569557" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32569557" />
@@ -343,13 +339,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -357,10 +346,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding>
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-728">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="136">
+          <caret line="175" column="12" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

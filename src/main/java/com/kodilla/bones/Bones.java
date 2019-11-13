@@ -2,6 +2,8 @@ package com.kodilla.bones;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
@@ -19,8 +21,8 @@ import java.util.Random;
 
 public class Bones extends Application {
 
-    private Computer computer;
-    private Player player;
+    private Player computer = new Player();
+    private Player player = new Player();
     private boolean playerTurn;
 
     //private Image background = new Image("file:resources/file/tlo.png");
@@ -63,49 +65,74 @@ public class Bones extends Application {
         Background background = new Background(backgroundImage);
         gridPane.setBackground(background);
 
+        ImageView numberOfBoneView = new ImageView();
+
         ImageView numberOneBoneView = new ImageView();
         Image numberOneBone = new Image("/file/1.png");
-        numberOneBoneView.setImage(numberOneBone);
-        numberOneBoneView.setFitHeight(50);
-        numberOneBoneView.setFitWidth(50);
+        gridPane.add(numberOneBoneView, 4, 3, 1, 1);
 
-       // gridPane.add(numberOneBoneView, 4, 3, 1, 1);
-
-/*
         ImageView numberTwoBoneView = new ImageView();
         Image numberTwoBone = new Image("/file/2.png");
-        numberTwoBoneView.setImage(numberTwoBone);
-        numberTwoBoneView.setFitHeight(50);
-        numberTwoBoneView.setFitWidth(50);
-        gridPane.getChildren().add(numberTwoBoneView);
+        gridPane.add(numberTwoBoneView, 4, 3, 1, 1);
 
         ImageView numberThreeBoneView = new ImageView();
         Image numberThreeBone = new Image("/file/3.png");
-        numberThreeBoneView.setImage(numberThreeBone);
-        numberThreeBoneView.setFitHeight(50);
-        numberThreeBoneView.setFitWidth(50);
-        gridPane.getChildren().add(numberThreeBoneView);
+        gridPane.add(numberThreeBoneView, 4 , 3, 1, 1);
 
         ImageView numberFourBoneView = new ImageView();
         Image numberFourBone = new Image("/file/4.png");
-        numberFourBoneView.setImage(numberFourBone);
-        numberFourBoneView.setFitHeight(50);
-        numberFourBoneView.setFitWidth(50);
-        gridPane.getChildren().add(numberFourBoneView);
+        gridPane.add(numberFourBoneView, 4, 3, 1, 1);
 
         ImageView numberFiveBoneView = new ImageView();
         Image numberFiveBone = new Image("/file/5.png");
-        numberFiveBoneView.setImage(numberFiveBone);
-        numberFiveBoneView.setFitHeight(50);
-        numberFiveBoneView.setFitWidth(50);
-        gridPane.getChildren().add(numberFiveBoneView);
+        gridPane.add(numberFiveBoneView, 4, 3, 1, 1);
 
         ImageView numberSixBoneView = new ImageView();
         Image numberSixBone = new Image("/file/6.png");
-        numberSixBoneView.setImage(numberSixBone);
-        numberSixBoneView.setFitHeight(50);
-        numberSixBoneView.setFitWidth(50);
-        gridPane.getChildren().add(numberSixBoneView);
+        gridPane.add(numberSixBoneView, 4, 3, 1, 1);
+
+        /*
+        public void numberOfBone(ImageView numberOfBoneView) {
+            try {
+            Image numberOfBoneImage;
+            switch (numberOfBoneView) {
+                case numberOfBoneImage = "numberOneBone":
+                    numberOneBoneView.setImage(numberOneBone);
+                    numberOneBoneView.setFitHeight(50);
+                    numberOneBoneView.setFitWidth(50);
+                    break;
+                case numberTwoBoneView:
+                    numberTwoBoneView.setImage(numberTwoBone);
+                    numberTwoBoneView.setFitHeight(50);
+                    numberTwoBoneView.setFitWidth(50);
+                    break;
+                case numberThreeBone:
+                    numberThreeBoneView.setImage(numberThreeBone);
+                    numberThreeBoneView.setFitHeight(50);
+                    numberThreeBoneView.setFitWidth(50);
+                    break;
+                case numberFourBone:
+                    numberFourBoneView.setImage(numberFourBone);
+                    numberFourBoneView.setFitHeight(50);
+                    numberFourBoneView.setFitWidth(50);
+                    break;
+                case numberFiveBone:
+                    numberFiveBoneView.setImage(numberFiveBone);
+                    numberFiveBoneView.setFitHeight(50);
+                    numberFiveBoneView.setFitWidth(50);
+                    break;
+                case numberSixBone:
+                    numberSixBoneView.setImage(numberSixBone);
+                    numberSixBoneView.setFitHeight(50);
+                    numberSixBoneView.setFitWidth(50);
+                    break;
+                default:
+                    System.out.println("No move made");
+            }
+        }
+
+/*
+
 */
         // button's in game
 
@@ -135,20 +162,47 @@ public class Bones extends Application {
         playerNameField.setPromptText("player name");
         gridPane.add(playerNameField, 2, 1, 1, 1);
 
-        Label playerScoreLabel = new Label("Player score:");
-        playerScoreLabel.setFont(new Font("Verdana", 15));
-        playerScoreLabel.setTextFill(Color.BLACK);
-        gridPane.add(playerScoreLabel, 1, 2, 1, 1);
+        Label playerScoreText = new Label("Player score:");
+        playerScoreText.setFont(new Font("Verdana", 15));
+        playerScoreText.setTextFill(Color.BLACK);
+        gridPane.add(playerScoreText, 1, 2, 1, 1);
 
-        Label computerScoreLabel = new Label("Computer score:");
-        computerScoreLabel.setFont(new Font("Verdana", 15));
-        computerScoreLabel.setTextFill(Color.BLACK);
-        gridPane.add(computerScoreLabel, 1, 3, 1, 1);
+        Label playerScore = new Label("0");
+        playerScore.setFont(new Font("Verdana", 15));
+        playerScore.setTextFill(Color.BLACK);
+        gridPane.add(playerScore, 2, 2, 1, 1);
+        playerScore.setOnMouseClicked(e -> {
+            int totalScoreResult = player.scorePoints();
+            String total = Integer.toString(totalScoreResult);
+            playerScore.setText(total);
+        });
+
+        Label computerScoreText = new Label("Computer score:");
+        computerScoreText.setFont(new Font("Verdana", 15));
+        computerScoreText.setTextFill(Color.BLACK);
+        gridPane.add(computerScoreText, 1, 3, 1, 1);
+
+        Label computerScore = new Label("0");
+        computerScore.setFont(new Font("Verdana", 15));
+        computerScore.setTextFill(Color.BLACK);
+        gridPane.add(computerScore, 2, 3, 1, 1);
+        computerScore.setOnMouseClicked(e -> {
+            int totalComputerScoreResult = player.scorePoints();
+            String totalComputer = Integer.toString(totalComputerScoreResult);
+            playerScore.setText(totalComputer);
+        });
 
         Button playerTurn = new Button();
         playerTurn.setText("Player turn");
         playerTurn.setTextFill(Color.BLUE);
         playerTurn.setFont(new Font("Verdana", 15));
+        playerTurn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                int rolledNumberResult = player.generateMove(10 - player.countingNumberOfMoves());
+                System.out.println(rolledNumberResult);
+            }
+        });
 
         gridPane.add(playerTurn, 1, 4, 1, 1);
 
@@ -174,11 +228,6 @@ public class Bones extends Application {
         gridPane.getRowConstraints().addAll(row1, row2, row3, row4);
     }
 
-    public void generateRandomNumber() {
-        Random randomNumber = new Random();
-        int rolledNumber = randomNumber.nextInt(6) + 1;
-    }
-
     public void results() {
         int numberOfMoves = 0;
         int playerScore = player.scorePoints();
@@ -188,7 +237,7 @@ public class Bones extends Application {
 
         if (numberOfMoves == 10 && playerScore > computerScore) {
             System.out.println("Player wins");
-           // status.setText("You won");
+            //status.setText("You won");
         } else if (numberOfMoves == 10 && playerScore < computerScore) {
             System.out.println("Computer wins");
             //status.setText("You lose");
