@@ -226,24 +226,29 @@ public class Bones extends Application {
         row4.setValignment(VPos.CENTER);
 
         gridPane.getRowConstraints().addAll(row1, row2, row3, row4);
-    }
 
-    public void results() {
+        Label status = new Label();
+        status.setFont(new Font("Verdana", 15));
+        status.setTextFill(Color.BLACK);
+        gridPane.add(status, 1, 4, 1, 1);
         int numberOfMoves = 0;
-        int playerScore = player.scorePoints();
-        int computerScore = computer.scorePoints();
+     //   int playerScore = player.scorePoints();
+   //     int computerScore = computer.scorePoints();
         System.out.println("Player score: " + playerScore);
         System.out.println("Computer score: " + computerScore);
 
         if (numberOfMoves == 10 && playerScore > computerScore) {
             System.out.println("Player wins");
-            //status.setText("You won");
+            status.setText("You won");
         } else if (numberOfMoves == 10 && playerScore < computerScore) {
             System.out.println("Computer wins");
             //status.setText("You lose");
         } else {
             System.out.println("Draw");
-        //    status.setText("Draw");
+            //    status.setText("Draw");
+    }
+
+
         }
     }
 
