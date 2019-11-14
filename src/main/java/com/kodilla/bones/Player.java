@@ -11,6 +11,7 @@ public class Player {
         int totalScore = 0;
         for(int i = 0; i < 10; i++) {
             totalScore += sums[i];
+            totalScore = countingNumberOfMoves() * generateRandomNumber();
         }
         return totalScore;
        }
@@ -36,4 +37,5 @@ public class Player {
         sums[numberOfMove] = rolledNumber;
         return rolledNumber;
     }
+
 }

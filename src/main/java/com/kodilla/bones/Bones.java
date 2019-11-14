@@ -23,7 +23,7 @@ public class Bones extends Application {
 
     private Player computer = new Player();
     private Player player = new Player();
-    private boolean playerTurn;
+    private boolean playerThrow;
 
     //private Image background = new Image("file:resources/file/tlo.png");
     private Image one = new Image("/file/1.png");
@@ -55,7 +55,7 @@ public class Bones extends Application {
             primaryStage.setTitle("Bones");
             primaryStage.setScene(scene);
             primaryStage.show();
-        }  catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -77,7 +77,7 @@ public class Bones extends Application {
 
         ImageView numberThreeBoneView = new ImageView();
         Image numberThreeBone = new Image("/file/3.png");
-        gridPane.add(numberThreeBoneView, 4 , 3, 1, 1);
+        gridPane.add(numberThreeBoneView, 4, 3, 1, 1);
 
         ImageView numberFourBoneView = new ImageView();
         Image numberFourBone = new Image("/file/4.png");
@@ -93,7 +93,6 @@ public class Bones extends Application {
 
         /*
         public void numberOfBone(ImageView numberOfBoneView) {
-            try {
             Image numberOfBoneImage;
             switch (numberOfBoneView) {
                 case numberOfBoneImage = "numberOneBone":
@@ -225,33 +224,50 @@ public class Bones extends Application {
         RowConstraints row4 = new RowConstraints(100);
         row4.setValignment(VPos.CENTER);
 
+        RowConstraints row5 = new RowConstraints(100);
+        row5.setValignment(VPos.BOTTOM);
+
         gridPane.getRowConstraints().addAll(row1, row2, row3, row4);
 
         Label status = new Label();
         status.setFont(new Font("Verdana", 15));
         status.setTextFill(Color.BLACK);
-        gridPane.add(status, 1, 4, 1, 1);
-        int numberOfMoves = 0;
-     //   int playerScore = player.scorePoints();
-   //     int computerScore = computer.scorePoints();
-        System.out.println("Player score: " + playerScore);
-        System.out.println("Computer score: " + computerScore);
+        gridPane.add(status, 1, 5, 1, 1);
 
-        if (numberOfMoves == 10 && playerScore > computerScore) {
+        int numberOfMoves = 0;
+        for (int i = 0; i < 10; i++) {
+            player.countingNumberOfMoves();
+        }
+
+        if (playerThrow = false) {
+            computer.generateMove(10 - computer.countingNumberOfMoves());
+            computer.scorePoints();
+        }
+
+        int playerScoreTotal = player.scorePoints();
+        int computerScoreTotal = computer.scorePoints();
+
+        System.out.println("Player score: " + playerScoreTotal);
+        System.out.println("Computer score: " + computerScoreTotal);
+
+        if (numberOfMoves == 10 && playerScoreTotal > computerScoreTotal) {
             System.out.println("Player wins");
             status.setText("You won");
-        } else if (numberOfMoves == 10 && playerScore < computerScore) {
+        } else if (numberOfMoves == 10 && playerScoreTotal < computerScoreTotal) {
             System.out.println("Computer wins");
-            //status.setText("You lose");
+            status.setText("You lose");
         } else {
             System.out.println("Draw");
-            //    status.setText("Draw");
-    }
-
-
+            status.setText("Draw");
         }
     }
 
+    public void newMove() {
+        if (computer.countingNumberOfMoves() < 10) {
+            computer.generateRandomNumber();
+        }
+    }
+}
 /*
         //example of File Input Stream from internet
         //Creating an image
@@ -271,5 +287,3 @@ public class Bones extends Application {
         //Setting the preserve ratio of the image view
         imageView.setPreserveRatio(true);
 */
-
-}
