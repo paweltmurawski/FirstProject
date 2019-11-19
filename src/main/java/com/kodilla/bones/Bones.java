@@ -130,15 +130,13 @@ public class Bones extends Application {
         playerTurn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-               int numberOfMoves = 0;
+                int numberOfMoves = 0;
                 try {
-                    if(playerThrow = true) {
-                        for (int i = 0; i < 10; i++) {
-                            int rolledNumberResult = player.generateMove(10 - player.countingNumberOfMoves());
-                            playerScore.setText(player.scorePoints() + "");
-                            System.out.println(rolledNumberResult);
-                            numberOfMoves += 1;
-                        }
+                    if (playerThrow = true) {
+                        int rolledNumberResult = player.generateMove(10 - player.countingNumberOfMoves());
+                        playerScore.setText(player.scorePoints() + "");
+                        System.out.println(rolledNumberResult);
+                        numberOfMoves += 1;
                     }
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("You have reached maximum number of moves");
@@ -156,18 +154,13 @@ public class Bones extends Application {
             @Override
             public void handle(ActionEvent event) {
                 try {
-                  //  if(playerThrow = false) {
-                    //    while (computer.countingNumberOfMoves() < 10) {
+                   // if(playerThrow = false) {
+                     //   while (computer.countingNumberOfMoves() < 10) {
                             int rolledNumberComputerResult = computer.generateMove(10 - computer.countingNumberOfMoves());
                             computerScore.setText(computer.scorePoints() + "");
                             System.out.println(rolledNumberComputerResult);
-
-                    Label status = new Label();
-                    status.setFont(new Font("Verdana", 15));
-                    status.setTextFill(Color.BLACK);
-                    gridPane.add(status, 1, 5, 1, 1);
-                   //     }
-                   // }
+                       // }
+                 //   }
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("End of computer turns");
                 }
