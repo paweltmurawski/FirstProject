@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" line="105" mnemonic="9" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5cb3deef-3ed5-4813-8631-b21ac2cb6bef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Bones$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Bones$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Bones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Bones.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/kodilla/bones/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" afterDir="false" />
     </list>
@@ -15,6 +21,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -23,22 +43,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-993">
-              <caret line="168" column="8" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="342">
+              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
+            <state relative-caret-position="-757">
+              <caret line="159" column="34" selection-start-line="159" selection-start-column="34" selection-end-line="159" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,8 +87,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Bones.java" />
         <option value="$PROJECT_DIR$/src/main/java/Project/first/project/Bones.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" />
       </list>
     </option>
   </component>
@@ -84,7 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,6 +149,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,17 +257,21 @@
       <workItem from="1572648306862" duration="7510000" />
       <workItem from="1572772444893" duration="16032000" />
       <workItem from="1573526471002" duration="18957000" />
+      <workItem from="1573698989341" duration="1996000" />
+      <workItem from="1573754709296" duration="2643000" />
+      <workItem from="1573759227906" duration="2384000" />
+      <workItem from="1574080379657" duration="13678000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168388000" />
+    <option name="totallyTimeSpent" value="189089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33282906" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3540091" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -256,7 +280,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32569557" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32569557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -275,9 +299,9 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Gradle" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Database" order="9" weight="0.32980332" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,27 +355,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="342">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-993">
-          <caret line="168" column="8" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="8" />
+        <state relative-caret-position="-757">
+          <caret line="159" column="34" selection-start-line="159" selection-start-column="34" selection-end-line="159" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
         </state>
       </provider>
     </entry>

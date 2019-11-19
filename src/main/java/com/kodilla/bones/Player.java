@@ -5,16 +5,14 @@ import java.util.Random;
 public class Player {
 
     private int[] sums = new int[10];
-    private int rolledNumber;
 
     public int scorePoints() {
         int totalScore = 0;
-        for(int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             totalScore += sums[i];
-            totalScore = countingNumberOfMoves() * generateRandomNumber();
         }
         return totalScore;
-       }
+    }
 
     public int countingNumberOfMoves() {
         int sum = 0;
@@ -32,10 +30,9 @@ public class Player {
         return rolledNumber;
     }
 
-    public int generateMove(int numberOfMove) {
+    public int generateMove(int numberOfMoves) {
         int rolledNumber = generateRandomNumber();
-        sums[numberOfMove] = rolledNumber;
+        sums[numberOfMoves] = rolledNumber;
         return rolledNumber;
     }
-
 }
