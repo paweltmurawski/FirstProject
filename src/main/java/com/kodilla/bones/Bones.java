@@ -170,9 +170,8 @@ public class Bones extends Application {
         ColumnConstraints column1 = new ColumnConstraints(150);
         ColumnConstraints column2 = new ColumnConstraints(150);
         ColumnConstraints column3 = new ColumnConstraints(150);
-        ColumnConstraints column4 = new ColumnConstraints(150);
 
-        gridPane.getColumnConstraints().addAll(column1, column2, column3, column4);
+        gridPane.getColumnConstraints().addAll(column1, column2, column3);
 
         RowConstraints row1 = new RowConstraints(50);
         row1.setValignment(VPos.TOP);
@@ -198,27 +197,27 @@ public class Bones extends Application {
 
             ImageView numberOneBoneView = new ImageView();
             Image numberOneBone = new Image("/file/1.png");
-            gridPane.add(numberOneBoneView, 4, 3, 1, 1);
+            gridPane.add(numberOneBoneView, 3, 3, 1, 1);
 
             ImageView numberTwoBoneView = new ImageView();
             Image numberTwoBone = new Image("/file/2.png");
-            gridPane.add(numberTwoBoneView, 4, 3, 1, 1);
+            gridPane.add(numberTwoBoneView, 3, 3, 1, 1);
 
             ImageView numberThreeBoneView = new ImageView();
             Image numberThreeBone = new Image("/file/3.png");
-            gridPane.add(numberThreeBoneView, 4, 3, 1, 1);
+            gridPane.add(numberThreeBoneView, 3, 3, 1, 1);
 
             ImageView numberFourBoneView = new ImageView();
             Image numberFourBone = new Image("/file/4.png");
-            gridPane.add(numberFourBoneView, 4, 3, 1, 1);
+            gridPane.add(numberFourBoneView, 3, 3, 1, 1);
 
             ImageView numberFiveBoneView = new ImageView();
             Image numberFiveBone = new Image("/file/5.png");
-            gridPane.add(numberFiveBoneView, 4, 3, 1, 1);
+            gridPane.add(numberFiveBoneView, 3, 3, 1, 1);
 
             ImageView numberSixBoneView = new ImageView();
             Image numberSixBone = new Image("/file/6.png");
-            gridPane.add(numberSixBoneView, 4, 3, 1, 1);
+            gridPane.add(numberSixBoneView, 3, 3, 1, 1);
 
             switch (number) {
                 case 1:
@@ -260,27 +259,27 @@ public class Bones extends Application {
 
         ImageView numberOneBoneView = new ImageView();
         Image numberOneBone = new Image("/file/1.png");
-        gridPane.add(numberOneBoneView, 4, 4, 1, 1);
+        gridPane.add(numberOneBoneView, 3, 4, 1, 1);
 
         ImageView numberTwoBoneView = new ImageView();
         Image numberTwoBone = new Image("/file/2.png");
-        gridPane.add(numberTwoBoneView, 4, 4, 1, 1);
+        gridPane.add(numberTwoBoneView, 3, 4, 1, 1);
 
         ImageView numberThreeBoneView = new ImageView();
         Image numberThreeBone = new Image("/file/3.png");
-        gridPane.add(numberThreeBoneView, 4, 4, 1, 1);
+        gridPane.add(numberThreeBoneView, 3, 4, 1, 1);
 
         ImageView numberFourBoneView = new ImageView();
         Image numberFourBone = new Image("/file/4.png");
-        gridPane.add(numberFourBoneView, 4, 4, 1, 1);
+        gridPane.add(numberFourBoneView, 3, 4, 1, 1);
 
         ImageView numberFiveBoneView = new ImageView();
         Image numberFiveBone = new Image("/file/5.png");
-        gridPane.add(numberFiveBoneView, 4, 4, 1, 1);
+        gridPane.add(numberFiveBoneView, 3, 4, 1, 1);
 
         ImageView numberSixBoneView = new ImageView();
         Image numberSixBone = new Image("/file/6.png");
-        gridPane.add(numberSixBoneView, 4, 4, 1, 1);
+        gridPane.add(numberSixBoneView, 3, 4, 1, 1);
 
         switch (number) {
             case 1:
