@@ -152,15 +152,18 @@ public class Bones extends Application {
                 if (numberOfMovesLeft == 0 && playerScoreTotal > computerScoreTotal) {
                     System.out.println("Player wins");
                     status.setText("You won");
+                    playerTurn.setText("Game over");
                 } else if (numberOfMovesLeft == 0 && playerScoreTotal < computerScoreTotal) {
                     System.out.println("Computer wins");
                     status.setText("You lose");
+                    playerTurn.setText("Game over");
                 } else if (numberOfMovesLeft > 0) {
                     System.out.println("Next move");
                     status.setText("Next move");
                 } else {
                     System.out.println("Draw");
                     status.setText("Draw");
+                    playerTurn.setText("Game over");
                 }
             }
         });

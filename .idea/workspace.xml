@@ -7,7 +7,6 @@
     <list default="true" id="5cb3deef-3ed5-4813-8631-b21ac2cb6bef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -51,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-308">
-              <caret line="194" selection-start-line="194" selection-end-line="194" />
+            <state relative-caret-position="330">
+              <caret line="165" column="49" selection-start-line="165" selection-start-column="49" selection-end-line="165" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1241#1242#0" expanded="true" />
@@ -86,8 +85,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Bones.java" />
         <option value="$PROJECT_DIR$/src/main/java/Project/first/project/Bones.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Computer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java" />
       </list>
     </option>
   </component>
@@ -259,16 +258,15 @@
       <workItem from="1573698989341" duration="1996000" />
       <workItem from="1573754709296" duration="2643000" />
       <workItem from="1573759227906" duration="2384000" />
-      <workItem from="1574080379657" duration="31148000" />
+      <workItem from="1574080379657" duration="32021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206559000" />
+    <option name="totallyTimeSpent" value="207432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3540091" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -364,8 +362,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/bones/Bones.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-308">
-          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        <state relative-caret-position="330">
+          <caret line="165" column="49" selection-start-line="165" selection-start-column="49" selection-end-line="165" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1241#1242#0" expanded="true" />
