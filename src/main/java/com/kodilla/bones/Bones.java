@@ -59,7 +59,7 @@ public class Bones extends Application {
         startGame.setTextFill(Color.BLUE);
         startGame.setFont(new Font("Verdana", 25));
         startGame.setOnAction(event -> System.out.println("I clicked start button"));
-        gridPane.add(startGame, 1, 0, 1, 1);
+        gridPane.add(startGame, 1, 1, 1, 1);
 
         Button quitButton = new Button();
         quitButton.setText("Quit");
@@ -69,26 +69,26 @@ public class Bones extends Application {
             System.out.println("Exit");
             Platform.exit();
         });
-        gridPane.add(quitButton, 2, 0, 1, 1);
+        gridPane.add(quitButton, 2, 1, 1, 1);
 
         Label nameLabel = new Label("Player name:");
         nameLabel.setFont(new Font("Verdana", 15));
         nameLabel.setTextFill(Color.BLACK);
-        gridPane.add(nameLabel, 1, 1, 1, 1);
+        gridPane.add(nameLabel, 1, 2, 1, 1);
 
         TextField playerNameField = new TextField();
         playerNameField.setPromptText("player name");
-        gridPane.add(playerNameField, 2, 1, 1, 1);
+        gridPane.add(playerNameField, 2, 2, 1, 1);
 
         Label playerScoreText = new Label("Player score:");
         playerScoreText.setFont(new Font("Verdana", 15));
         playerScoreText.setTextFill(Color.BLACK);
-        gridPane.add(playerScoreText, 1, 2, 1, 1);
+        gridPane.add(playerScoreText, 1, 3, 1, 1);
 
         Label playerScore = new Label("");
         playerScore.setFont(new Font("Verdana", 15));
         playerScore.setTextFill(Color.BLACK);
-        gridPane.add(playerScore, 2, 2, 1, 1);
+        gridPane.add(playerScore, 2, 3, 1, 1);
         playerScore.setOnMouseClicked(e -> {
             int totalScoreResult = player.scorePoints();
             String total = Integer.toString(totalScoreResult);
@@ -98,12 +98,12 @@ public class Bones extends Application {
         Label computerScoreText = new Label("Computer score:");
         computerScoreText.setFont(new Font("Verdana", 15));
         computerScoreText.setTextFill(Color.BLACK);
-        gridPane.add(computerScoreText, 1, 3, 1, 1);
+        gridPane.add(computerScoreText, 1, 4, 1, 1);
 
         Label computerScore = new Label();
         computerScore.setFont(new Font("Verdana", 15));
         computerScore.setTextFill(Color.BLACK);
-        gridPane.add(computerScore, 2, 3, 1, 1);
+        gridPane.add(computerScore, 2, 4, 1, 1);
         computerScore.setOnMouseClicked(e -> {
             int totalComputerScoreResult = computer.scorePoints();
             String totalComputer = Integer.toString(totalComputerScoreResult);
@@ -113,7 +113,7 @@ public class Bones extends Application {
         Label status = new Label();
         status.setFont(new Font("Verdana", 15));
         status.setTextFill(Color.BLACK);
-        gridPane.add(status, 1, 5, 1, 1);
+        gridPane.add(status, 1, 6, 1, 1);
 
         Button playerTurn = new Button();
         playerTurn.setText("Player turn");
@@ -165,7 +165,7 @@ public class Bones extends Application {
             }
         });
 
-        gridPane.add(playerTurn, 1, 4, 1, 1);
+        gridPane.add(playerTurn, 1, 5, 1, 1);
 
         ColumnConstraints column1 = new ColumnConstraints(150);
         ColumnConstraints column2 = new ColumnConstraints(150);
@@ -174,7 +174,7 @@ public class Bones extends Application {
 
         gridPane.getColumnConstraints().addAll(column1, column2, column3, column4);
 
-        RowConstraints row1 = new RowConstraints(100);
+        RowConstraints row1 = new RowConstraints(50);
         row1.setValignment(VPos.TOP);
 
         RowConstraints row2 = new RowConstraints(50);
@@ -183,40 +183,42 @@ public class Bones extends Application {
         RowConstraints row3 = new RowConstraints(50);
         row3.setValignment(VPos.TOP);
 
-        RowConstraints row4 = new RowConstraints(100);
+        RowConstraints row4 = new RowConstraints(50);
         row4.setValignment(VPos.CENTER);
 
-        RowConstraints row5 = new RowConstraints(100);
+        RowConstraints row5 = new RowConstraints(50);
         row5.setValignment(VPos.BOTTOM);
 
-        gridPane.getRowConstraints().addAll(row1, row2, row3, row4);
+        RowConstraints row6 = new  RowConstraints(50);
+
+        gridPane.getRowConstraints().addAll(row1, row2, row3, row4, row5, row6);
     }
 
         public void playerImageChooser(int number, GridPane gridPane) {
 
             ImageView numberOneBoneView = new ImageView();
             Image numberOneBone = new Image("/file/1.png");
-            gridPane.add(numberOneBoneView, 4, 2, 1, 1);
+            gridPane.add(numberOneBoneView, 4, 3, 1, 1);
 
             ImageView numberTwoBoneView = new ImageView();
             Image numberTwoBone = new Image("/file/2.png");
-            gridPane.add(numberTwoBoneView, 4, 2, 1, 1);
+            gridPane.add(numberTwoBoneView, 4, 3, 1, 1);
 
             ImageView numberThreeBoneView = new ImageView();
             Image numberThreeBone = new Image("/file/3.png");
-            gridPane.add(numberThreeBoneView, 4, 2, 1, 1);
+            gridPane.add(numberThreeBoneView, 4, 3, 1, 1);
 
             ImageView numberFourBoneView = new ImageView();
             Image numberFourBone = new Image("/file/4.png");
-            gridPane.add(numberFourBoneView, 4, 2, 1, 1);
+            gridPane.add(numberFourBoneView, 4, 3, 1, 1);
 
             ImageView numberFiveBoneView = new ImageView();
             Image numberFiveBone = new Image("/file/5.png");
-            gridPane.add(numberFiveBoneView, 4, 2, 1, 1);
+            gridPane.add(numberFiveBoneView, 4, 3, 1, 1);
 
             ImageView numberSixBoneView = new ImageView();
             Image numberSixBone = new Image("/file/6.png");
-            gridPane.add(numberSixBoneView, 4, 2, 1, 1);
+            gridPane.add(numberSixBoneView, 4, 3, 1, 1);
 
             switch (number) {
                 case 1:
@@ -258,27 +260,27 @@ public class Bones extends Application {
 
         ImageView numberOneBoneView = new ImageView();
         Image numberOneBone = new Image("/file/1.png");
-        gridPane.add(numberOneBoneView, 4, 3, 1, 1);
+        gridPane.add(numberOneBoneView, 4, 4, 1, 1);
 
         ImageView numberTwoBoneView = new ImageView();
         Image numberTwoBone = new Image("/file/2.png");
-        gridPane.add(numberTwoBoneView, 4, 3, 1, 1);
+        gridPane.add(numberTwoBoneView, 4, 4, 1, 1);
 
         ImageView numberThreeBoneView = new ImageView();
         Image numberThreeBone = new Image("/file/3.png");
-        gridPane.add(numberThreeBoneView, 4, 3, 1, 1);
+        gridPane.add(numberThreeBoneView, 4, 4, 1, 1);
 
         ImageView numberFourBoneView = new ImageView();
         Image numberFourBone = new Image("/file/4.png");
-        gridPane.add(numberFourBoneView, 4, 3, 1, 1);
+        gridPane.add(numberFourBoneView, 4, 4, 1, 1);
 
         ImageView numberFiveBoneView = new ImageView();
         Image numberFiveBone = new Image("/file/5.png");
-        gridPane.add(numberFiveBoneView, 4, 3, 1, 1);
+        gridPane.add(numberFiveBoneView, 4, 4, 1, 1);
 
         ImageView numberSixBoneView = new ImageView();
         Image numberSixBone = new Image("/file/6.png");
-        gridPane.add(numberSixBoneView, 4, 3, 1, 1);
+        gridPane.add(numberSixBoneView, 4, 4, 1, 1);
 
         switch (number) {
             case 1:
