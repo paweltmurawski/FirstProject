@@ -14,7 +14,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -22,17 +21,7 @@ public class Bones extends Application {
 
     private Player computer = new Player();
     private Player player = new Player();
-    private boolean playerThrow;
-    private FileChooser fileChooser;
-
-    //private Image background = new Image("file:resources/file/tlo.png");
-    private Image one = new Image("/file/1.png");
-
-    private Image two = new Image("file:resources/2.png");
-    private Image three = new Image("file:resources/3.png");
-    private Image four = new Image("file:resources/4.png");
-    private Image five = new Image("file:resources/5.png");
-    private Image six = new Image("file:resources/6.png");
+    boolean playerThrow;
 
     public static void main(String[] args) {
         launch(args);
@@ -328,7 +317,6 @@ public class Bones extends Application {
                 System.out.println("No move made");
         }
     }
-
 }
 
 
