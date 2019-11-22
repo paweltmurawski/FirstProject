@@ -17,7 +17,7 @@ public class Player {
     public int countingNumberOfMoves() {
         int sum = 0;
         for (int i = 0; i < 10; i++) {
-            if(sums[i] == 0) {
+            if (sums[i] == 0) {
                 sum += 1;
             }
         }
