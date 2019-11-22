@@ -54,8 +54,6 @@ public class Bones extends Application {
         Background background = new Background(backgroundImage);
         gridPane.setBackground(background);
 
-        // button's in game
-
         Button startGame = new Button();
         startGame.setText("Start");
         startGame.setTextFill(Color.BLUE);
