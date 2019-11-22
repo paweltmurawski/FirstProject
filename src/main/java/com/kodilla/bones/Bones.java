@@ -116,7 +116,7 @@ public class Bones extends Application {
         gridPane.add(status, 1, 6, 1, 1);
 
         Button playerTurn = new Button();
-        playerTurn.setText("Player turn");
+        playerTurn.setText("Random number");
         playerTurn.setTextFill(Color.BLUE);
         playerTurn.setFont(new Font("Verdana", 15));
         playerTurn.setOnAction(new EventHandler<ActionEvent>() {
@@ -124,19 +124,19 @@ public class Bones extends Application {
             public void handle(ActionEvent event) {
                 try {
                     if (playerThrow = true) {
-                        int rolledNumberResult = player.generateMove(10 - player.countingNumberOfMoves());
+                        int randomNumberResult = player.generateMove(10 - player.countingNumberOfMoves());
                         playerScore.setText(player.scorePoints() + "");
-                        System.out.println("Player rolled Number: " + rolledNumberResult);
-                        playerImageChooser(rolledNumberResult,gridPane);
+                        System.out.println("Player random Number: " + randomNumberResult);
+                        playerImageChooser(randomNumberResult,gridPane);
                     }
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("You have reached maximum number of moves");
                 }
                 try {
-                    int rolledNumberComputerResult = computer.generateMove(10 - computer.countingNumberOfMoves());
+                    int randomNumberComputerResult = computer.generateMove(10 - computer.countingNumberOfMoves());
                     computerScore.setText(computer.scorePoints() + "");
-                    System.out.println("Computer rolled number: " + rolledNumberComputerResult);
-                    computerImageChooser(rolledNumberComputerResult, gridPane);
+                    System.out.println("Computer random number: " + randomNumberComputerResult);
+                    computerImageChooser(randomNumberComputerResult, gridPane);
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("End of computer turns");
                 }

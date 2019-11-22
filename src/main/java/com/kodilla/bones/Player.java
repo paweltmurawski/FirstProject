@@ -26,13 +26,13 @@ public class Player {
 
     public int generateRandomNumber() {
         Random randomNumber = new Random();
-        int rolledNumber = randomNumber.nextInt(6) + 1;
-        return rolledNumber;
+        int randomedNumber = randomNumber.nextInt(6) + 1;
+        return randomedNumber;
     }
 
     public int generateMove(int numberOfMoves) {
-        int rolledNumber = generateRandomNumber();
-        sums[numberOfMoves] = rolledNumber;
-        return rolledNumber;
+        int randomNumber = generateRandomNumber();
+        sums[numberOfMoves] = randomNumber;
+        return randomNumber;
     }
 }
