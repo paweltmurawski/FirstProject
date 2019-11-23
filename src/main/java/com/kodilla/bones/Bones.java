@@ -54,22 +54,15 @@ public class Bones extends Application {
         Background background = new Background(backgroundImage);
         gridPane.setBackground(background);
 
-        Button startGame = new Button();
-        startGame.setText("Start");
-        startGame.setTextFill(Color.BLUE);
-        startGame.setFont(new Font("Verdana", 25));
-        startGame.setOnAction(event -> System.out.println("I clicked start button"));
-        gridPane.add(startGame, 1, 1, 1, 1);
-
         Button quitButton = new Button();
         quitButton.setText("Quit");
         quitButton.setTextFill(Color.RED);
-        quitButton.setFont(new Font("Verdana", 25));
+        quitButton.setFont(new Font("Verdana", 15));
         quitButton.setOnAction(e -> {
             System.out.println("Exit");
             Platform.exit();
         });
-        gridPane.add(quitButton, 2, 1, 1, 1);
+        gridPane.add(quitButton, 3, 1, 1, 1);
 
         Label nameLabel = new Label("Player name:");
         nameLabel.setFont(new Font("Verdana", 15));
